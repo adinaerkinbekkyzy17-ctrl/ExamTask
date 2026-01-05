@@ -268,13 +268,29 @@ insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, che
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --1. Owner_лердин аттарынын арасынан эн коп символ камтыган owner_ди жана анын уйун(House) чыгар.
-select *from owners where
+
+
 --2. Уйлордун баалары 1500, 2000 дин аралыгында бар болсо true чыгар, жок болсо false чыгар.
-select *from houses price
+SELECT EXISTS (
+    SELECT 1
+    FROM houses
+    WHERE price BETWEEN 1500 AND 2000
+) AS exists_between_1500_2000;
 -- 3. id_лери 5, 6, 7, 8, 9, 10 го барабар болгон адресстерди жана ал адрессте кайсы уйлор бар экенин чыгар.
+SELECT a.*, h.*
+FROM addresses a
+LEFT JOIN houses h ON h.address_id = a.id
+WHERE a.id BETWEEN 5 AND 10;
 -- 4. Бардык уйорду, уйдун ээсинин атын, клиенттин атын, агенттин атын чыгар.
+
     select *from  owners first_name,customers first_name,agencies name;
 -- 5. Клиенттердин 10-катарынан баштап 1999-жылдан кийин туулган 15 клиентти чыгар.
+SELECT *
+FROM customers
+WHERE date_of_birth > '1999-01-01'
+ORDER BY id
+OFFSET 9
+    LIMIT 15;
 --6. Рейтинги боюнча уйлорду сорттоп, уйлордун тайптарын, рейтингин жана уйдун ээлерин чыгар. (asc and desc)
     select from houses  order by  house_type,rating and owner_id ,' ';
 -- 7. Уйлордун арасынан квартиралардын (apartment) санын жана алардын баасынын суммасын чыгар.
