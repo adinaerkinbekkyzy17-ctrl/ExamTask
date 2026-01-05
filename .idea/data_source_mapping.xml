@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/fe887c76-ffdb-4a9a-ac45-e7edeed85b91/console.sql" value="fe887c76-ffdb-4a9a-ac45-e7edeed85b91" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/example/examTask.sql" value="520e0100-bfa0-4af2-89d5-e2cf57236576" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/example/examTaskDML.sql" value="520e0100-bfa0-4af2-89d5-e2cf57236576" />
+  </component>
+</project>
