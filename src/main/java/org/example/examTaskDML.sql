@@ -20,11 +20,19 @@ create table owners(
                            date_of_birth numeric,
                            gender gender
 );
-create table  rent_infos(
+create table  rent_info(
                             id serial primary key ,
                             check_in varchar,
-                            check_out varchar
+                            check_out varchar,
+                                owner_id int references owners,
+                            customer_id int references customers,
+                            agency_id int references agencies,
+                           house_id int references houses
+
+
 );
+
+
 
 create table addresses(
                           id serial primary key ,
@@ -225,6 +233,38 @@ insert into houses (house_type, price, rating, description, room, furniture, add
 insert into houses (house_type, price, rating, description, room, furniture, address_id, owner_id) values ('House', 1639, 3.3, 'Shanahan Inc', 12, true,27 ,15 );
 insert into houses (house_type, price, rating, description, room, furniture, address_id, owner_id) values ('Apartment', 852, 3.1, 'Barrows-Boyer', 11, false,11 ,34 );
 
+
+
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (1, 1, 1, 1, '2021-10-12', '2021-10-27');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (2, 2, 2, 5, '2021-01-19', '2022-11-13');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (3, 3, 3, 3, '2021-12-12', '2022-03-24');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (20, 4, 4, 4, '2021-01-27', '2021-08-31');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (5, 5, 5, 2, '2022-07-05', '2023-01-16');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (6, 6, 6, 6, '2021-01-22', '2021-08-30');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (7, 7, 7, 7, '2019-08-08', '2022-02-04');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (8, 8, 8, 8, '2021-04-06', '2021-05-21');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (9, 9, 9, 9, '2020-11-07', '2022-07-05');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (22, 10, 10, 10, '2022-03-18', '2023-01-10');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (11, 11, 1, 11, '2018-02-03', '2021-02-04');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (12, 12, 2, 12, '2021-12-09', '2023-01-08');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (13, 13, 3, 13, '2021-03-15', '2022-10-13');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (10, 14, 4, 14, '2022-04-22', '2022-06-16');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (15, 15, 5, 15, '2020-08-27', '2021-08-05');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (16, 16, 6, 16, '2019-04-27', '2020-12-03');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (17, 17, 7, 17, '2021-01-01', '2021-12-31');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (10, 18, 8, 18, '2020-05-24', '2021-02-20');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (32, 19, 9, 19, '2019-09-27', '2020-07-31');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (4, 20, 10, 20, '2021-12-21', '2022-06-20');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (21, 21, 1, 21, '2021-12-09', '2023-01-01');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (10, 22, 2, 22, '2022-01-20', '2022-08-05');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (13, 23, 3, 23, '2020-12-03', '2021-04-22');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (24, 24, 4, 24, '2022-12-26', '2023-01-16');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (33, 25, 5, 25, '2020-02-07', '2021-08-19');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (26, 26, 1, 26, '2019-09-10', '2021-09-19');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (6, 27, 2, 27, '2021-05-02', '2021-12-21');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (28, 28, 3, 28, '2022-01-16', '2022-12-13');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (29, 29, 7, 29, '2020-11-09', '2021-05-04');
+insert into rent_info (owner_id, customer_id, agency_id, house_id, check_in, check_out) values (30, 30, 8, 30, '2022-05-08', '2022-12-29');
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 --1. Owner_лердин аттарынын арасынан эн коп символ камтыган owner_ди жана анын уйун(House) чыгар.
