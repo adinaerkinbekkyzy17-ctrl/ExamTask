@@ -3,7 +3,7 @@ create  table agencyes(
                           name VARCHAR,
                           phoneNumber NUMERIC
 );
-create type  enam;
+
 create type Gender as enum ('male','female') ;
 create type HouseType as enum('House', 'Apartment');
 create type family_status as enum( 'Single', 'Married', 'Divorced', 'Widow', 'Separated', 'Other');
